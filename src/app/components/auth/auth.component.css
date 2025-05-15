@@ -1,0 +1,57 @@
+/* Ocupa toda la pantalla y centra */
+.auth-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+    padding: 16px;
+}
+
+/* Tarjeta principal */
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.logo {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Formulario */
+.auth-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+/* Botones */
+.full-width {
+    width: 100%;
+}
+
+/* Acciones (links) */
+.auth-actions {
+    margin-top: 16px;
+    justify-content: flex-end;
+    width: 100%;
+    display: flex;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reservas - Fitness Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Reserva tu sesión en nuestro gimnasio premium">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    
+    <!-- Fuentes -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/superfish.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Modernizr -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+    <div id="fh5co-wrapper">
+        <div id="fh5co-page">
+            <!-- Header -->
+            <div id="fh5co-header">
+                <header id="fh5co-header-section">
+                    <div class="container">
+                        <div class="nav-header">
+                            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+                            <h1 id="fh5co-logo"><a href="index.html">Fit<span>ness</span></a></h1>
+                            <nav id="fh5co-menu-wrap" role="navigation">
+                                <ul class="sf-menu" id="fh5co-primary-menu">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="classes.html">Clases</a></li>
+                                    <li><a href="schedule.html">Horarios</a></li>
+                                    <li><a href="trainer.html">Entrenadores</a></li>
+                                    <li class="active"><a href="contact.html">Reservas</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </header>        
+            </div>
+            <!-- Fin Header -->
+            
+            <!-- Hero Banner -->
+            <div class="fh5co-parallax" style="background-image: url(images/gym-banner.jpg);" data-stellar-background-ratio="0.5">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+                            <div class="fh5co-intro fh5co-table-cell animate-box">
+                                <h1 class="text-center">Reserva tu Sesión</h1>
+                                <p>Completa el formulario para garantizar tu espacio en nuestras instalaciones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Hero Banner -->
+            
+            <!-- Formulario de Reserva -->
+            <div id="fh5co-contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="reservation-box animate-box">
+                                <h2 class="text-center">Formulario de Reserva</h2>
+                                <p class="text-center">Todos los campos son obligatorios</p>
+                                
+                                <form [formGroup]="formClientes" (ngSubmit)="edit ? updateClientes() : createClientes()" class="book-form">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-field">
+                                                <label for="name">Nombres</label>
+                                                <input type="text" id="name" formControlName="name" class="form-input" placeholder="Ingresa tu nombre">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-field">
+                                                <label for="surname">Apellidos</label>
+                                                <input type="text" id="surname" formControlName="surname" class="form-input" placeholder="Ingresa tus apellidos">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-field">
+                                                <label for="email">Email</label>
+                                                <input type="email" id="email" formControlName="email" class="form-input" placeholder="tucorreo@ejemplo.com">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-field">
+                                                <label for="phoneNumber">Teléfono</label>
+                                                <input type="number" id="phoneNumber" formControlName="phoneNumber" class="form-input" placeholder="Número de contacto">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-field">
+                                        <label for="message">Mensaje/Requerimientos Especiales</label>
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="5" formControlName="message" placeholder="Indica si tienes alguna necesidad especial o comentario"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-field" style="display: none;">
+                                        <input type="text" id="fechaRegistro" formControlName="fechaRegistro">
+                                    </div>
+                                    
+                                    <div class="text-center button-group">
+                                        <button type="submit" class="btn btn-primary btn-reservation" [disabled]="isSaveInProgress">
+                                            Confirmar Reserva
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Formulario de Reserva -->
+            
+            <!-- Mapa -->
+            <div id="map" class="fh5co-map"></div>
+            
+            <!-- Footer -->
+            <footer>
+                <div id="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 animate-box">
+                                <h3 class="section-title">Sobre Nosotros</h3>
+                                <p>Centro de fitness premium con instalaciones de última generación y entrenadores certificados para ayudarte a alcanzar tus metas.</p>
+                            </div>
+
+                            <div class="col-md-4 animate-box">
+                                <h3 class="section-title">Contacto</h3>
+                                <ul class="contact-info">
+                                    <li><i class="icon-map-marker"></i>Av. Principal 123, Cusco</li>
+                                    <li><i class="icon-phone"></i>+51 984 567 890</li>
+                                    <li><i class="icon-envelope"></i><a href="#">info@fitnesscenter.com</a></li>
+                                    <li><i class="icon-clock"></i>Lun-Vie: 6:00 AM - 10:00 PM</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 animate-box">
+                                <h3 class="section-title">Newsletter</h3>
+                                <form class="contact-form">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Tu correo electrónico">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-subscribe" value="Suscribirse">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row copy-right">
+                            <div class="col-md-6 col-md-offset-3 text-center">
+                                <p class="fh5co-social-icons">
+                                    <a href="#"><i class="icon-facebook2"></i></a>
+                                    <a href="#"><i class="icon-instagram"></i></a>
+                                    <a href="#"><i class="icon-youtube"></i></a>
+                                </p>
+                                <p>&copy; 2023 Fitness Center. Todos los derechos reservados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/hoverIntent.js"></script>
+    <script src="js/superfish.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY"></script>
+    <script src="js/google_map.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+.navbar{
+    background-color: blue;
+    color: azure;
+    padding: 0 16px;
+}
+
+.spacer{
+    flex: 1;
+}
+
+.logo{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.navbar a{
+    color: aliceblue !important;
+}
+
+.logout-button{
+    color: blueviolet !important;
+}
+
+.logout-button mat-icon{
+    color: blueviolet !important;
+}
