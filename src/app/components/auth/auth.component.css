@@ -1,57 +1,95 @@
-/* Ocupa toda la pantalla y centra */
+/* Estilos generales */
 .auth-container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f2f5;
-    padding: 16px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(46, 46, 46, 0.9), rgba(0, 0, 0, 0.8)),
+              url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
 }
 
-/* Tarjeta principal */
+/* Tarjeta de autenticación */
 .auth-card {
-    width: 100%;
-    max-width: 400px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px !important;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s ease;
 }
 
-/* Logo */
+.auth-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Encabezado */
+.mat-card-header {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .logo-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
+  background: #ff4b4b;
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
 .logo {
-    width: 96px;
-    height: 96px;
-    object-fit: contain;
-    border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.mat-card-title {
+  font-size: 1.8rem !important;
+  font-weight: 700 !important;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.mat-card-subtitle {
+  color: #666 !important;
+  font-size: 1rem !important;
 }
 
 /* Formulario */
 .auth-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-/* Botones */
 .full-width {
-    width: 100%;
+  padding: 12px 24px !important;
+  font-size: 1.1rem !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-/* Acciones (links) */
-.auth-actions {
-    margin-top: 16px;
-    justify-content: flex-end;
-    width: 100%;
-    display: flex;
+.full-width:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 75, 75, 0.4) !important;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .auth-card {
+    width: 85%;
+    margin: 1rem;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
 }

@@ -5,7 +5,9 @@ import { authGuard } from './guards/auth.guard';
 import { ClientesFormComponent } from './pages/clientes-form/clientes-form.component';
 
 export const routes: Routes = [
-    {path: '', redirectTo:'auth',pathMatch:'full'},
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+
+    /*{path: '', redirectTo:'auth',pathMatch:'full'},*/
     /*{path: 'home', component: HomeComponent, canActivate:[authGuard]},
     {path: 'clientes-form/:id', component: ClientesFormComponent, canActivate:[authGuard]},*/
     {path: 'home', component: HomeComponent},
